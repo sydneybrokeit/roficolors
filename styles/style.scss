@@ -1,0 +1,122 @@
+/* Color Variables */
+/* Window Colors */
+$winbackground: #7bbcda;
+$winborder: #E5EAEA;
+$winseparator: #ef7aaa;
+
+/* Normal Items */
+$normalbg: #476983;
+$normalalt: #7bbcda;
+$normalfg: #E5EAEA;
+$normalhighlightbg: #ef7aaa;
+$normalhighlightfg: #E5EAEA;
+
+/* Active Items */
+$activebg: #476983;
+$activealt: #7bbcda;
+$activefg: #E5EAEA;
+$activehighlightbg: #ef7aaa;
+$activehighlightfg: #E5EAEA;
+
+/* Urgent Items */
+$urgentbg: #476983;
+$urgentalt: #7bbcda;
+$urgentfg: #E5EAEA;
+$urgenthighlightbg: #ef7aaa;
+$urgenthighlightfg: #E5EAEA;
+
+@mixin rofiboxes {
+  padding: 4px 10px;
+  margin-bottom: 2px;
+}
+
+div.rofibox {
+  margin: 0 auto;
+  width: 50%;
+  padding: 6px;
+  background-color: #000;
+  position: absolute;
+  top: 37.5%;
+  left: 25%;
+  font-family: monospace;
+}
+
+div.rofiborder {
+  border: 2px solid $winborder;
+  width: calc(100%-4px);
+  height: 100%;
+  padding: 4px;
+  background-color: $winbackground;
+}
+
+.normal {
+  @include rofiboxes;
+  background-color: $normalbg;
+  color: $normalfg;
+  &.alt {
+    background-color: $normalalt;
+  }
+  &:not(.top):hover {
+    background-color: $normalhighlightbg;
+    color: $normalhighlightfg;
+  }
+}
+
+
+.active {
+  @include rofiboxes;
+  background-color: $activebg;
+  color: $activefg;
+  &.alt {
+    background-color: $activealt;
+  }
+  &:hover {
+    background-color: $activehighlightbg;
+    color: $activehighlightfg;
+  }
+}
+
+.urgent {
+  @include rofiboxes;
+  background-color: $urgentbg;
+  color: $urgentfg;
+  &.alt {
+    background-color: $urgentalt;
+  }
+  &:hover {
+    background-color: $urgenthighlightbg;
+    color: $urgenthighlightfg;
+  }
+}
+
+
+div.rofiseparator {
+  margin: 4px 0px;
+  background-color: $winseparator;
+  height: 2px;
+}
+
+div.scrollbox {
+  width: 100%;
+}
+
+div.scrollbar {
+  background-color: $winseparator;
+  height: 100px;
+  float: right;
+  margin-left: 4px;
+  width: 15px;
+}
+
+div.itembox {
+  width: calc(100% - 19px);
+  float: left;
+}
+
+div.itembox div:last-child {
+  margin-bottom: 0;
+}
+
+.clear {
+  clear: both; display: block;
+}
