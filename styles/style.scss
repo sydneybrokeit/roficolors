@@ -120,3 +120,17 @@ div.itembox div:last-child {
 .clear {
   clear: both; display: block;
 }
+
+.colorbars {
+  width: 100%;
+}
+
+.colorleft {
+  float: left;
+  width: 50%;
+}
+
+.colorright {
+  float: right;
+  width: 50%;
+}
